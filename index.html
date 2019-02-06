@@ -45,8 +45,9 @@ var config = {
           <tr>
             <th scope="col">Train Name</th>
             <th scope="col">Destination</th>
-            <th scope="col">First Train</th>
             <th scope="col">Frequency (min)</th>
+            <th scope="col">Next Train</th>
+            <th scope="col">Minutes Away</th>
           </tr>
         </thead>
         <tbody id="trainBody">
@@ -63,12 +64,12 @@ var config = {
       <input type="text" class="form-control" id="destination">
   </div>
     <div class="form-group">
-      <label for="exampleFormControlInput1">First Train</label>
-      <input type="text" class="form-control" id="firstTrain">
-    </div>
-    <div class="form-group">
       <label for="exampleFormControlInput1">Frequency (min)</label>
       <input type="text" class="form-control" id="frequency">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Next Train Train</label>
+      <input type="text" class="form-control" id="firstTrain">
     </div>
         
     <button type="button" class="btn btn-success" id="submitButton">Submit</button>
