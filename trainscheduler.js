@@ -1,4 +1,3 @@
-
   $(document).ready(function () {
     //your code here
   
@@ -12,7 +11,14 @@
         var frequency = $('#frequency').val().trim();
         console.log(trainName, destination, firstTrain, frequency);
 
-        
+        firebase.database().ref('trains/' + encodeURIComponent(trainName)).set({
+        trainName: trainName,
+        destination: destination,
+        firstTrain: firstTrain,
+        frequency: frequency,
+
+        });
+
 
         var nextTrain = moment(firstTrain);
         while (nextTrain.isBefore(moment())) {
@@ -20,6 +26,8 @@
           
         }
         console.log(nextTrain);
+
+
         var timeRemaining = moment().diff(nextTrain);
 
         var tr = $('<tr>');
