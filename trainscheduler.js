@@ -1,6 +1,13 @@
   $(document).ready(function () {
     //your code here
-  
+    
+    var trainCount = firebase.database().ref('trains/'+ trainCount + '/trainCount')
+    trainCount.on('value', function(snapshot) {
+    updateTrainCount(trainName, snapshot.val());
+    console.log(snapshot.val());
+
+});
+
     
   $('#submitButton').on("click", function (event){
         event.preventDefault();
@@ -16,8 +23,8 @@
         destination: destination,
         firstTrain: firstTrain,
         frequency: frequency,
+      });
 
-        });
 
 
         var nextTrain = moment(firstTrain);
@@ -42,8 +49,7 @@
   })
  
 
-
-
+        
 
 
 
