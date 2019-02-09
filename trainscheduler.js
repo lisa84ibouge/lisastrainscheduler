@@ -40,6 +40,9 @@
         event.preventDefault();
         console.log("click")
         var trainName = $('#trainName').val().trim();
+        if (trainName.length == 0) {
+        return;
+        }
         var destination = $('#destination').val().trim();
         var firstTrain = $('#firstTrain').val().trim();
         var frequency = $('#frequency').val().trim();
