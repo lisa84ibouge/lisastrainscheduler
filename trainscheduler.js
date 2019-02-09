@@ -28,7 +28,7 @@
 
         tr.append(td1, td2, td3, td4, td5);
         $('#trainBody').append(tr);
-
+        
       }
    // trainCount(trainName, snapshot.val());
     console.log(snapshot.val());
@@ -44,7 +44,7 @@
         var firstTrain = $('#firstTrain').val().trim();
         var frequency = $('#frequency').val().trim();
         console.log(trainName, destination, firstTrain, frequency);
-
+        $('#trainBody').html("");
         firebase.database().ref('trains/' + encodeURIComponent(trainName)).set({
         trainName: trainName,
         destination: destination,
@@ -54,7 +54,7 @@
 
 
 
-        var nextTrain = moment(firstTrain);
+      /* var nextTrain = moment(firstTrain);
         while (nextTrain.isBefore(moment())) {
             nextTrain = nextTrain.add(parseInt(frequency), 'minutes');
           
@@ -74,7 +74,7 @@
         tr.append(td1, td2, td3, td4, td5);
         $('#trainBody').append(tr);
 
-      
+      */
   })
  
 
